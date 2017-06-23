@@ -10,12 +10,14 @@
     function jokeController(jokeFactory) {
 
         var vm = this;
-        // vm.term = term.contents.quotes.quote;
-        // console.log(vm.term);
+
+        vm.click = false;
 
         getJoke();
-        
+
         getInspiration();
+
+        getGiphy();
 
         function getJoke() {
             jokeFactory
@@ -23,17 +25,30 @@
                 .then(function (joke) {
                     vm.joke = joke;
                     console.log(vm.joke);
+                    vm.click = true;
                 })
+
         }
 
         function getInspiration() {
             jokeFactory
                 .getInspired()
                 .then(function (term) {
-                    console.log('come on');
+
                     vm.term = term;
+                    vm.img = term.background;
+                    console.log(vm.img);
                     console.log(vm.term);
                 });
+        }
+
+        function getGiphy() {
+            jokeFactory
+                .getGif()
+                .then(function (gif) {
+                    vm.gif = gif;
+                    console.log(vm.gif);
+                })
         }
 
 
