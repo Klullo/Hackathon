@@ -1,0 +1,36 @@
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+
+  <title>Jokes</title>
+  <meta name="description" content="inspiration">
+  <meta name="author" >
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles.css"></script>
+</head>
+
+<body ng-controller="jokeController as jokeCtrl">
+
+<div class="container">
+    <div class="jumbotron">
+    <h1>Funny Jokes</h1>
+    </div>
+    <p>{{jokeCtrl.joke.joke}}</p>
+    <p>{{jokeCtrl.term}}</p>
+</div>
+
+
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/controller/app.controller.js"></script>
+  <script src="app/core/app.factory.js"></script>
+
+</body>
+</html>
+
+
+ 
