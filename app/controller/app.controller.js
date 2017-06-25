@@ -19,6 +19,8 @@
 
         getGiphy();
 
+      
+
         function getJoke() {
             jokeFactory
                 .getData()

@@ -3,32 +3,44 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Jokes</title>
+    <title>hAppy</title>
     <meta name="description" content="inspiration">
     <meta name="author">
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     </script>
 </head>
 
-<body ng-controller="jokeController as jokeCtrl">
+<body class "bg-info" ng-controller="jokeController as jokeCtrl">
 
     <div class="container">
-        <div class="jumbotron">
-            <h1>Funny Jokes</h1>
-        </div>
-        <div class="panel panel-info col-md-6">
+        <header class="main-header text-white">
+            <h1>hAppy</h1>
+            <p class="lead">Whether you want motivation or cheap laughs</p>
+            <p class="lead">Start your day with good vibes</p>
+        </header>
+        <button class="btn btn-outline-primary btn-lg" ng-click="jokeCtrl.click()">Joke</button>
 
-            
-            <div class="panel panel-title panel-info">info</div>
-            <button ng-click="jokeCtrl.getJoke()">Joke</button>
 
-            <p ng-hide="jokeCtrl.click == false">{{jokeCtrl.joke.joke}}</p>
+
+
+        <div ng-show="jokeCtrl.!joke" class="panel panel-info col-md-6">
+            <p><strong>{{jokeCtrl.joke.joke}}</strong></p>
             <p>{{jokeCtrl.term.quote}} {{jokeCtrl.term.author}}
             </p>
+
             <img class="img-responsive" ng-src="{{jokeCtrl.img}}">
+
             <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
+            <div class="embed-responsive embed-responsive-16by9">
+                <!--<iframe class="embed-responsive-item"width="361" height="25" src="https://www.youtube.com/embed/Cvar4ZsqsEo?autoplay=1" frameborder="0" allowfullscreen="false"></iframe>-->
+                <iframe width="100%" height="25" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1253903&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+            </div>
         </div>
     </div>
 
