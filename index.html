@@ -24,19 +24,29 @@
             <p class="lead">Whether you want motivation or cheap laughs</p>
             <p class="lead">Start your day with good vibes</p>
         </header>
-        <button class="btn btn-outline-primary btn-lg" ng-click="jokeCtrl.click()">Joke</button>
+        <div class="col-md-6">
+        <button class="joke btn btn-outline-primary btn-lg" ng-click="showme = true">Joke</button>
+        </div>
+        
 
-
-
-
-        <div ng-show="jokeCtrl.!joke" class="panel panel-info col-md-6">
+        <div class="col-md-6">
+        <button class="mot btn btn-outline-primary btn-lg" ng-click="showus = true">Motivational Quote</button>
+        </div>
+        <div ng-hide="!showme" ng-show="showme" class="panel panel-info col-md-6">
             <p><strong>{{jokeCtrl.joke.joke}}</strong></p>
+              <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
+            </div>
+             
+
+            <div ng-show="showus" class="panel panel-info col-md-6">
             <p>{{jokeCtrl.term.quote}} {{jokeCtrl.term.author}}
             </p>
 
             <img class="img-responsive" ng-src="{{jokeCtrl.img}}">
-
-            <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
+             <!--<img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">-->
+            </div>
+             </div>
+            
             <div class="embed-responsive embed-responsive-16by9">
                 <!--<iframe class="embed-responsive-item"width="361" height="25" src="https://www.youtube.com/embed/Cvar4ZsqsEo?autoplay=1" frameborder="0" allowfullscreen="false"></iframe>-->
                 <iframe width="100%" height="25" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1253903&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
