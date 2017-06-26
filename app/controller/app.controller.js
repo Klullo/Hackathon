@@ -18,8 +18,8 @@
         getInspiration();
 
         getGiphy();
+        
 
-      
 
         function getJoke() {
             jokeFactory

@@ -18,12 +18,12 @@
 
 <body class "bg-info" ng-controller="jokeController as jokeCtrl">
 
+    <!--------------------Header Background-------------------->
 
-
-    <div id='xop-bg'class="img-responsive">
-        <div class='xop-blur-link vertical-align'><a>Discover Your Day</a></div>
-        <div class='j xop-blur-link vertical-align' ng-init="showme=false" ng-click="showme = !showme"><a>Joke</a></div>
-        <div class='q xop-blur-link vertical-align' ng-init="showus=false" ng-click="showus = !showus"><a>Motivational Quote</a></div>
+    <div id='xop-bg' class="img-responsive">
+        <div class='xop-blur-link vertical-align'><a href="https://new.theastrologer.com/">Discover Your Day</a></div>
+        <div class='xop-blur-link vertical-align' ng-init="showme=false" ng-click="showme = !showme"><a>Joke</a></div>
+        <div class='xop-blur-link vertical-align' ng-init="showus=false" ng-click="showus = !showus"><a>Motivational Quote</a></div>
     </div>
 
     <script>
@@ -36,51 +36,41 @@
         });
     </script>
 
+    <!----------------------Joke Display Panel---------------------------->
 
-    <!--<header class="main-header text-white">
-            <h1>hAppy</h1>
-            <p class="lead">Whether you want motivation or cheap laughs</p>
-            <p class="lead">Start your day with good vibes</p>
-        </header>-->
+    <div class="container">
+        <div ng-hide="!showme" ng-show="showme" class="mom panel panel-info" ng-class="{ 'col-md-6': showus }">
+            <h2 class="lead try"><strong>{{jokeCtrl.joke.joke}}</strong></h2>
+            <hr>
+            <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
+            <hr>
+            <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
+            <hr>
+            <button class="top" ng-init="showus=false" ng-click="showus = !showus">Quote</button>
+            <button class="top" ng-init="showme=false" ng-click="showme = !showme">Remove</button>
+            
+        </div>
 
-    <!--<div class="container">-->
 
-    <!--<div class="col-md-6">
-        <button class="joke btn btn-outline-primary btn-lg" ng-init="showme=false"ng-click="showme = !showme"> Silly Joke</button>
-        </div>-->
+        <!------------------------Motivational Quote Panel---------------------->
 
-
-    <!--<div>
-        <button class="mot btn btn-outline-primary btn-lg" ng-init="showus=false" ng-click="showus = !showus">Motivational Quote</button>
-        </div>-->
-        <div class="container">
-    <div ng-hide="!showme" ng-show="showme" class="mom panel panel-info col-md-6">
-        <h2>{{jokeCtrl.joke.joke}}</h2>
-        <hr>
-        <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
-        <hr>
-        <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
-    </div>
-    
-
-    <div ng-show="showus" class="panel panel-info col-md-6">
-        <h2 class="lead"><strong>{{jokeCtrl.term.title}}</strong></h2>
-
-        <p class="lead">{{jokeCtrl.term.quote}} {{jokeCtrl.term.author}}
-        </p>
-        <hr>
-        <img class="img-responsive" ng-src="{{jokeCtrl.img}}">
-        <!--<img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">-->
-
-        <hr>
-        <!--<div class="embed-responsive embed-responsive-16by9">-->
-        <!--<iframe class="embed-responsive-item"width="361" height="25" src="https://www.youtube.com/embed/Cvar4ZsqsEo?autoplay=1" frameborder="0" allowfullscreen="false"></iframe>-->
-        <iframe width="100%" height="165" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1253903&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <div ng-show="showus" class="mot panel panel-info" ng-class="{ 'col-md-6': showme }">
+            <h2 class="lead"><strong>{{jokeCtrl.term.title}}</strong></h2>
+            <p class="lead">{{jokeCtrl.term.quote}} {{jokeCtrl.term.author}}
+            </p>
+            <hr>
+            <img class="img-responsive" ng-src="{{jokeCtrl.img}}">
+            <hr>
+            <iframe width="100%" height="165" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1253903&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+            <hr>
+            <button class="top" ng-init="showme=false" ng-click="showme = !showme">Joke</button>
+            <button class="top" ng-init="showus=false" ng-click="showus = !showus">Remove</button>
+            
+        </div>
     </div>
     </div>
     </div>
     </div>
-</div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
