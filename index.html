@@ -53,6 +53,7 @@
     <!--<div>
         <button class="mot btn btn-outline-primary btn-lg" ng-init="showus=false" ng-click="showus = !showus">Motivational Quote</button>
         </div>-->
+        <div class="container">
     <div ng-hide="!showme" ng-show="showme" class="mom panel panel-info col-md-6">
         <h2>{{jokeCtrl.joke.joke}}</h2>
         <hr>
@@ -60,7 +61,7 @@
         <hr>
         <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
     </div>
-
+    
 
     <div ng-show="showus" class="panel panel-info col-md-6">
         <h2 class="lead"><strong>{{jokeCtrl.term.title}}</strong></h2>
@@ -79,7 +80,7 @@
     </div>
     </div>
     </div>
-
+</div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
