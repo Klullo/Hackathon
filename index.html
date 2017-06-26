@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>hAppy</title>
+    <title>Discover Your Day</title>
     <meta name="description" content="inspiration">
     <meta name="author">
 
@@ -18,62 +18,67 @@
 
 <body class "bg-info" ng-controller="jokeController as jokeCtrl">
 
-    <div class="container">
 
-        <div id ='xop-bg'>
-    <div class='xop-blur-link'><a>Discover Your Day</a></div>
-</div>  
 
-<script>
-    $(function() {
-        $('.xop-blur-link a').hover(function() {
-            $('#xop-bg').addClass('blur');
-        },function() {
-            $('#xop-bg').removeClass('blur');
+    <div id='xop-bg'class="img-responsive">
+        <div class='xop-blur-link vertical-align'><a>Discover Your Day</a></div>
+        <div class='j xop-blur-link vertical-align' ng-init="showme=false" ng-click="showme = !showme"><a>Joke</a></div>
+        <div class='q xop-blur-link vertical-align' ng-init="showus=false" ng-click="showus = !showus"><a>Motivational Quote</a></div>
+    </div>
+
+    <script>
+        $(function () {
+            $('.xop-blur-link a').hover(function () {
+                $('#xop-bg').addClass('blur');
+            }, function () {
+                $('#xop-bg').removeClass('blur');
+            });
         });
-    });
-</script>
+    </script>
 
 
-        <!--<header class="main-header text-white">
+    <!--<header class="main-header text-white">
             <h1>hAppy</h1>
             <p class="lead">Whether you want motivation or cheap laughs</p>
             <p class="lead">Start your day with good vibes</p>
         </header>-->
-        
-        <div class="col-md-6">
-        <button class="joke btn btn-outline-primary btn-lg" ng-init="showme=false"ng-click="showme = !showme">Joke</button>
-        </div>
-        
 
-        <div>
+    <!--<div class="container">-->
+
+    <!--<div class="col-md-6">
+        <button class="joke btn btn-outline-primary btn-lg" ng-init="showme=false"ng-click="showme = !showme"> Silly Joke</button>
+        </div>-->
+
+
+    <!--<div>
         <button class="mot btn btn-outline-primary btn-lg" ng-init="showus=false" ng-click="showus = !showus">Motivational Quote</button>
-        </div>
-        <div ng-hide="!showme" ng-show="showme" class="mom panel panel-info col-md-6">
-            <h2><strong>{{jokeCtrl.joke.joke}}</strong></h2>
-            <hr>
-              <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
-              <hr>
-              <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
-            </div>
-             
-            
-            <div ng-show="showus" class="panel panel-info col-md-6">
-            <h2 class="lead"><strong>{{jokeCtrl.term.title}}</strong></h2>
-            <p class="lead">{{jokeCtrl.term.quote}} {{jokeCtrl.term.author}}
-            </p>
-
-            <img class="img-responsive" ng-src="{{jokeCtrl.img}}">
-             <!--<img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">-->
-            
-            
-            <!--<div class="embed-responsive embed-responsive-16by9">-->
-                <!--<iframe class="embed-responsive-item"width="361" height="25" src="https://www.youtube.com/embed/Cvar4ZsqsEo?autoplay=1" frameborder="0" allowfullscreen="false"></iframe>-->
-                <iframe width="100%" height="165" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1253903&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-            </div>
-        </div>
+        </div>-->
+    <div ng-hide="!showme" ng-show="showme" class="mom panel panel-info col-md-6">
+        <h2>{{jokeCtrl.joke.joke}}</h2>
+        <hr>
+        <img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">
+        <hr>
+        <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
     </div>
-</div>
+
+
+    <div ng-show="showus" class="panel panel-info col-md-6">
+        <h2 class="lead"><strong>{{jokeCtrl.term.title}}</strong></h2>
+
+        <p class="lead">{{jokeCtrl.term.quote}} {{jokeCtrl.term.author}}
+        </p>
+        <hr>
+        <img class="img-responsive" ng-src="{{jokeCtrl.img}}">
+        <!--<img class="img-responsive" ng-src="{{jokeCtrl.gif.image_url}}">-->
+
+        <hr>
+        <!--<div class="embed-responsive embed-responsive-16by9">-->
+        <!--<iframe class="embed-responsive-item"width="361" height="25" src="https://www.youtube.com/embed/Cvar4ZsqsEo?autoplay=1" frameborder="0" allowfullscreen="false"></iframe>-->
+        <iframe width="100%" height="165" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1253903&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+    </div>
+    </div>
+    </div>
+    </div>
 
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
