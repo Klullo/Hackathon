@@ -10,17 +10,11 @@
     function jokeController(jokeFactory) {
 
         var vm = this;
-
         vm.click = false;
-
         getJoke();
-
         getInspiration();
-
         getGiphy();
         
-
-
         function getJoke() {
             jokeFactory
                 .getData()
@@ -29,21 +23,18 @@
                     console.log(vm.joke);
                     vm.click = true;
                 })
-
         }
 
         function getInspiration() {
             jokeFactory
                 .getInspired()
                 .then(function (term) {
-
                     vm.term = term;
                     vm.img = term.background;
                     console.log(vm.img);
                     console.log(vm.term);
                 });
         }
-
         function getGiphy() {
             jokeFactory
                 .getGif()
@@ -52,7 +43,5 @@
                     console.log(vm.gif);
                 })
         }
-
-
     }
 })();

@@ -22,8 +22,6 @@
                 .then(function (response) {
                     return response.data;
                 })
-
-
         }
 
         function getInspired() {
@@ -32,7 +30,6 @@
                 .then(function (response) {
                     return response.data.contents.quotes[0];
                 })
-
         }
 
         function getGif() {
@@ -40,11 +37,7 @@
                 .get('https://api.giphy.com/v1/gifs/random?api_key=28057c18e867498989876050ce9aae48&tag=&rating=G')
                 .then(function (response) {
                     return response.data.data;
-
                 })
-
         }
-
     }
-
 })();
